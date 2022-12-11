@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class StringOperationsTest {
     private static StringOperations stringOperations;
@@ -35,24 +35,6 @@ public class StringOperationsTest {
         String input = "hannah";
         boolean palindrome = stringOperations.isPalindrome(input);
         assertThat(true, Matchers.allOf(Matchers.is(palindrome),Matchers.not(false), Matchers.notNullValue()));
-    }
-
-    @Test
-    public void testReverseAssertText(){
-        String reverse = stringOperations.reverse("mice");
-        assertThat(reverse).startsWith("ec").endsWith("im").hasSize(4).contains("ecim").isEqualTo("ecim").doesNotContainAnyWhitespaces();
-    }
-
-    @Test
-    public void testAssertConcat() {
-        String concat = stringOperations.concat("Jan", "Kowalski");
-        assertThat(concat).startsWith("Ja").isEqualTo("JanKowalski").hasSize(11).doesNotContainAnyWhitespaces().isNotEmpty();
-    }
-
-    @Test
-    public void testAssertPalindrom() {
-        boolean palindrome = stringOperations.isPalindrome("kajak");
-        assertThat(palindrome).isTrue().isNotNull().isEqualTo(true).isNotEqualTo(false);
     }
 
     //Clear
